@@ -30,9 +30,9 @@ groups:
           token: ${PYPI_TOKEN}
         config:
           client_class_name: MyClientNameDevin
-        github: 
+        github:
           repository: devalog/python-sdk
-  csharp-sdk: # group name
+  csharp-sdk:
     generators:
       - name: fernapi/fern-csharp-sdk
         version: 2.1.15
@@ -61,6 +61,18 @@ groups:
           publish-to: central
         github:
           repository: devalog/java-sdk
+  rust-sdk:
+    generators:
+      - name: fernapi/fern-rust-sdk
+        version: 0.13.3
+        output:
+          location: crates
+          package-name: devin-crate
+          token: ${CRATES_IO_API_KEY}
+        config:
+          clientName: DevinRustSDK
+        github:
+          repository: devalog/rust-sdk
   postman:
     generators:
       - name: fernapi/fern-postman
@@ -75,12 +87,11 @@ groups:
         github:
           repository: devalog/postman-collection
 readme:
-  introduction: "Welcome to my API"
+  introduction: Welcome to my API
   disabledSections:
     - contributing
   customSections:
-    - title: "Custom Section"
-      language: "typescript"
+    - title: Custom Section
+      language: typescript
       content: |
         Custom section for {{ packageName }} 
-
